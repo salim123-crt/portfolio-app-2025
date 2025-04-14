@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com"; // Importer la bibliothèque EmailJS
 import "./style.scss";
 
 const Contact = () => {
@@ -18,8 +19,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Merci pour votre message !");
-    setFormData({ name: "", email: "", message: "" });
+
+    // Configuration d'EmailJS avec les informations de ton compte
+    const serviceID = "service_4ux06gx"; // Remplace avec l'ID de ton service
+    const templateID = "template_q5qwenz"; // Remplace avec l'ID de ton template
+    const userID = "ton_user_id"; // Remplace avec ton User ID (disponible dans ton tableau de bord EmailJS)
+
+    // Envoie de l'email avec EmailJS
+    emailjs
+      .sendForm(serviceID, templateID, e.target, userID)
+      .then(
+        (result) => {
+          console.log("Email envoyé avec succès :", result.text);
+          alert("Merci pour votre message !");
+          setFormData({ name: "", email: "", message: "" }); // Réinitialiser le formulaire
+        },
+        (error) => {
+          console.log("Erreur lors de l'envoi de l'email :", error.text);
+          alert("Oups, il y a eu un problème. Essayez encore.");
+        }
+      );
   };
 
   return (
@@ -34,7 +53,10 @@ const Contact = () => {
       </motion.h2>
 
       <div className="contact-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form
+          className="contact-form"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             name="name"
