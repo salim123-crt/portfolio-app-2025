@@ -21,7 +21,7 @@ const projects = [
   {
     title: "My Portfolio",
     link: "https://github.com/salim123-crt/portfolio-app-2025",
-    description: "Portfolio personnel dévloppé avec HTML, CSS, JavaScript et React pour présenter mes projets web de manière moderne er reponsive",
+    description: "Portfolio personnel dévloppé avec HTML, CSS, JavaScript et React pour présenter mes projets web de manière moderne et reponsive",
   },
 ];
 
