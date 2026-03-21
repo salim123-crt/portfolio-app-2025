@@ -1,29 +1,38 @@
-.skill-card{
+.skill-card {
     border-radius: 0.65rem;
     border: 1.5px solid #EEE8AA;
-    padding: 2.5rem;
+    padding: 2.5rem; // Taille Desktop
     text-align: center;
-    background: rgba($color: #1f1e1e00, $alpha: 1.0);
+    background: rgba(31, 30, 30, 0);
     backdrop-filter: blur(1rem);
     position: relative;
     cursor: pointer;
-    transition: all 0.3 ease;
-    color:  #EEE8AA;
-}
-.skill-icon{
-    color: #514e2b;
-}
-.skill-card:hover,
-.skill-card:active{
-    background : linear-gradient(100deg, #f6f4e1 0%, #e0d772 100%);
-    color: black;
+    transition: all 0.3s ease;
+    color: #EEE8AA;
 
+    // --- VERSION PORTABLE COMPACTE ---
+    @media only screen and (max-width: 768px) {
+        padding: 1.5rem 0.8rem 0.8rem 0.8rem; // Réduction forte du padding
+        margin-top: 0.5rem;
+
+        span {
+            font-size: 1rem !important; // Texte plus petit pour réduire le carré
+            display: block;
+            line-height: 1.2;
+        }
+    }
+
+    &.active {
+        background: linear-gradient(100deg, #f6f4e1 0%, #e0d772 100%);
+        color: black;
+        .skill-icon {
+            background: #ffffff;
+            color: black;
+        }
+    }
 }
-.skill-card span{
-    font-size: 2rem;
-    font-weight: bold;
-}
-.skill-icon{
+
+.skill-icon {
     width: 4rem;
     height: 4rem;
     display: flex;
@@ -32,8 +41,26 @@
     border-radius: 0.65rem;
     position: absolute;
     top: -1rem;
-    left: -1rem;
+    left: -1rem; // Place d'origine
     background: #fff59f;
     border: 1.5px solid #fff8a7;
+    color: #514e2b;
+    transition: all 0.3s ease;
 
+    // --- ICÔNE MOBILE (Petit format, même place) ---
+    @media only screen and (max-width: 768px) {
+        width: 2.2rem; 
+        height: 2.2rem;
+        top: -0.7rem;
+        left: -0.5rem; // On garde le décalage à gauche mais un peu moins extrême
+        
+        svg {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.skill-card span {
+    font-size: 2rem;
+    font-weight: bold;
 }

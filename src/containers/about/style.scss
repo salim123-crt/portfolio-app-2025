@@ -1,77 +1,134 @@
-.about-containerr {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem;
-  
-    @media (max-width: 768px) {
-      flex-direction: column; // empile les blocs sur mobile
-      padding: 1rem;
-    }
-  }
-  
-  .about-titles {
-    width: 40%;
-    color: var(--yellow-theme-main-color);
-    margin: 20px;
-    margin-left: 24px;
-  
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      margin-top: 10px;
-  
-      @media (max-width: 768px) {
-        font-size: 2rem;
-      }
-    }
-  
-    p {
-      font-size: 1.5rem;
-      color: white;
-      font-family: 'Courier, monospace';
-  
-      @media (max-width: 768px) {
-        font-size: 1.2rem;
-      }
-    }
-  
-    ul {
-      font-size: 1.5rem;
-      font-family: 'Courier, monospace';
-      margin-left: 30px;
-      color: white;
-  
-      li {
-        margin-top: 7px;
-  
-        @media (max-width: 768px) {
-          font-size: 1.2rem;
-        }
-      }
-  
-      @media (max-width: 768px) {
-        font-size: 1.2rem;
-        margin-left: 15px;
-      }
-    }
-  
-    @media (max-width: 768px) {
-      width: 100%;
-      margin: 10px 0;
-    }
-  }
-  
+.about {
+  padding: 2rem 0;
+
   .about-title {
     margin-top: 40px;
     font-size: 4rem;
     text-align: center;
     color: var(--yellow-theme-main-color);
     margin-bottom: 3rem;
-  
+
     @media (max-width: 768px) {
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
   }
-  
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 2rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+}
+
+// --- COLONNE GAUCHE (Bio & Infos) ---
+.about-left-column {
+  flex: 1.2; // Un peu plus large que la droite
+
+  .about-titles {
+    color: var(--yellow-theme-main-color);
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      margin-top: 20px;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .about-text {
+      font-size: 1.4rem;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+
+      li {
+        margin-top: 10px;
+        font-size: 1.4rem;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+
+        strong {
+          color: var(--yellow-theme-main-color);
+          margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+// --- COLONNE DROITE (Projets & Progress Bar) ---
+.about-right-column {
+  flex: 1;
+  color: var(--yellow-theme-main-color);
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .projects-progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .project-progress-item {
+      .project-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+
+      .progress-bar-base {
+        width: 100%;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(238, 232, 170, 0.2); // Légère bordure dorée
+
+        .progress-bar-fill {
+          height: 100%;
+          background: var(--yellow-theme-main-color);
+          box-shadow: 0 0 15px var(--yellow-theme-main-color);
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

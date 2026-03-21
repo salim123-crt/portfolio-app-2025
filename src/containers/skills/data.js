@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faDatabase, faBrain, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faDatabase, faBrain, faLaptopCode, faLanguage, faTools, faServer } from "@fortawesome/free-solid-svg-icons";
 
 export const SKILLS = [
     {
@@ -31,6 +31,17 @@ export const SKILLS = [
         ],
     },
     {
+    title: "DevOps & MLOps",
+    icon: <FontAwesomeIcon icon={faServer} size="3x" />,
+    skills: [
+        { skill: "Docker", percentage: "75%" },
+        { skill: "Jenkins", percentage: "65%" },
+        { skill: "Git & GitHub", percentage: "80%" },
+        { skill: "CI/CD (GitHub Actions / GitLab CI)", percentage: "70%" },
+        { skill: "FastAPI (Model Deployment)", percentage: "75%" },
+    ],
+},
+    {
         title: "Bibliothèques et Frameworks d'IA",
         icon: <FontAwesomeIcon icon={faBrain} size="3x"/>,
         skills:[
@@ -43,6 +54,24 @@ export const SKILLS = [
             {skill:"Keras", percentage:"50%"},
         ],
     },
+    {
+        title: "Langues",
+        icon: <FontAwesomeIcon icon={faLanguage} size="3x"/>,
+        skills:[
+            {skill:"Francais", percentage:"80%"},
+            {skill:"Englais", percentage:"75%"},
+            {skill:"Arabe", percentage:"100%"},
+        ],
+    },
+    {
+        title: "Outils et Logiciel",
+        icon: <FontAwesomeIcon icon={faTools} size="3x"/>,
+        skills:[
+            {skill:"Git", percentage:"60%"},
+            {skill:"Excel", percentage:"70%"},
+        ],
+    },
+
 ];
 
 
