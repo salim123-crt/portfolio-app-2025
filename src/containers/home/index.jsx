@@ -40,7 +40,7 @@ const Home = () => {
 
                {/* Bouton DOWNLOAD CV - Corrigé (le 0.5 a été supprimé) */}
                <motion.a
-                  href="/CV.pdf"
+                  href={`${process.env.PUBLIC_URL}/cv.pdf`}
                   download="SALIM_Ayoub_CV.pdf"
                   className="home-text-wrapper-button"
                   whileHover={{ scale: 1.05 }}
