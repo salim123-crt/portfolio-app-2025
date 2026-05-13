@@ -1,59 +1,82 @@
 .portfolio {
-    padding: 4rem 2rem;
+  padding: 5rem 8vw 7rem;
+  text-align: center;
+
+  &-wrapper {
+    max-width: 118rem;
+    margin: 0 auto;
+  }
+
+  &-title {
+    font-size: clamp(3rem, 5vw, 4.8rem);
     text-align: center;
+    color: var(--yellow-theme-main-color);
+    margin-bottom: 3rem;
+  }
+
+  &-projects {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-  
-    &-title {
-      font-size: 4rem;
-      text-align: center;
+    gap: 2.2rem;
+  }
+
+  .project-card {
+    background: var(--theme-surface-color);
+    border: 1px solid var(--theme-border-color);
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+    width: min(100%, 32rem);
+    min-height: 24rem;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--theme-shadow);
+
+    h3 {
       color: var(--yellow-theme-main-color);
-      margin-bottom: 3rem;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
     }
-  
-    &-projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+
+    p {
+      font-size: 1.35rem;
+      line-height: 1.7;
+      color: var(--theme-muted-text-color);
+      margin-bottom: 2rem;
     }
-  
-    .project-card {
-      background-color: var(--yellow-theme-background-color);
+
+    .project-button {
+      color: #111214;
+      background: var(--yellow-theme-main-color);
       border: 1px solid var(--yellow-theme-main-color);
-      padding: 2rem;
-      border-radius: 20px;
-      width: 300px;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 1.25rem;
+      font-weight: 800;
       text-align: center;
-      transition: transform 0.3s ease;
-  
-      h3 {
+      margin-top: auto;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: transparent;
         color: var(--yellow-theme-main-color);
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
       }
-  
-      p {
-        font-size: 1rem;
-        color: white;
-        margin-bottom: 1.5rem;
-      }
-  
-      .project-button {
-        color: var(--yellow-theme-main-color);
-        border: 1px solid var(--yellow-theme-main-color);
-        padding: 0.5rem 1.5rem;
-        text-decoration: none;
-        transition: background 0.3s, color 0.3s;
-  
-        &:hover {
-          background-color: var(--yellow-theme-main-color);
-          color: var(--yellow-theme-background-color);
-        }
-      }
-    }
-  
-    .project-card:hover {
-      transform: scale(1.05);
     }
   }
-  
+
+  .project-card:hover {
+    transform: translateY(-0.6rem);
+    border-color: rgba(238, 232, 170, 0.5);
+    background: var(--theme-surface-strong-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 4rem 2rem 5rem;
+  }
+}

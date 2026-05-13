@@ -1,89 +1,185 @@
 .home {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  
-    &-text-wrapper {
-      display: flex;
-      align-content: center;
-      flex-direction: column;
-      justify-content: center;
-  
-      &-text {
-        font-size: 6rem;
-        font-family: 'sans-serif';
-        color: var(--yellow-theme-main-color);
-        margin-right: 400px;
-        text-decoration: none;
-  
-        @media (max-width: 768px) {
-          font-size: 3rem;
-          margin-right: 0;
-          text-align: center;
-        }
-      }
-  
-      &-button {
-        color: var(--yellow-theme-main-color);
-        background-color: var(--yellow-theme-background-color);
-        border: 1px solid;
-        padding: 15px 40px;
-        font-family: 'sans-serif';
-        cursor: pointer;
-        align-items: center;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-  
-        @media (max-width: 768px) {
-          padding: 12px 30px;
-          font-size: 1rem;
-          margin: 0 auto;
-        }
-      }
-  
-      &-button:hover {
-        color: var(--yellow-theme-background-color);
-        background-color: var(--yellow-theme-main-color);
-        text-decoration: none;
-      }
-    }
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7rem 8vw;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 12% 7% auto auto;
+    width: min(44vw, 48rem);
+    height: min(44vw, 48rem);
+    border: 1px solid rgba(238, 232, 170, 0.2);
+    border-radius: 2.4rem;
+    background:
+      linear-gradient(90deg, rgba(238, 232, 170, 0.11) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(238, 232, 170, 0.11) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(238, 232, 170, 0.12), rgba(141, 219, 214, 0.08));
+    background-size: 4.8rem 4.8rem, 4.8rem 4.8rem, auto;
+    transform: rotate(-4deg);
+    z-index: 0;
   }
-  
-  .home-socials-button-wrapper {
+
+  &::after {
+    content: "ML";
+    position: absolute;
+    right: 13vw;
+    top: 24%;
+    width: 11rem;
+    height: 11rem;
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-top: 20px;
-  
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 20px;
-    }
+    justify-content: center;
+    border: 1px solid rgba(141, 219, 214, 0.32);
+    border-radius: 50%;
+    color: rgba(141, 219, 214, 0.82);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    background: rgba(17, 18, 20, 0.72);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    z-index: 0;
   }
-  
-  .home-social-icons {
+
+  &-text-wrapper {
     display: flex;
-    gap: 15px;
-    font-size: 2rem;
-  
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    width: min(86rem, 100%);
+    position: relative;
+    z-index: 1;
+
+    &-text {
+      font-size: clamp(4rem, 7vw, 8.2rem);
+      line-height: 1.02;
+      font-weight: 850;
+      color: var(--yellow-theme-main-color);
+      text-decoration: none;
+      max-width: 88rem;
+      letter-spacing: 0;
+    }
+
+    &-subtitle {
+      width: min(68rem, 100%);
+      color: var(--theme-muted-text-color);
+      font-size: clamp(1.6rem, 2vw, 2rem);
+      line-height: 1.75;
+      margin-top: 2rem;
+      max-width: 62rem;
+    }
+
+    &-button {
+      color: #111214;
+      background-color: var(--yellow-theme-main-color);
+      border: 1px solid var(--yellow-theme-main-color);
+      padding: 1.3rem 2.4rem;
+      cursor: pointer;
+      align-items: center;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      min-width: 14rem;
+      border-radius: 999px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(238, 232, 170, 0.14);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    &-button:hover {
+      color: var(--yellow-theme-main-color);
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    &-button-secondary {
+      color: var(--yellow-theme-main-color);
+      background: transparent;
+    }
+
+    &-button-secondary:hover {
+      color: #111214;
+      background: var(--yellow-theme-main-color);
     }
   }
-  
-  .home-social-icons a {
-    color: var(--yellow-theme-main-color);
-    transition: transform 0.2s ease;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 2rem;
+
+    &::before {
+      inset: 18% auto auto 50%;
+      width: 78vw;
+      height: 78vw;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      right: 2rem;
+      top: 12rem;
+      width: 7rem;
+      height: 7rem;
+      font-size: 2rem;
+    }
+
+    &-text-wrapper {
+      align-items: center;
+
+      &-button {
+        padding: 1.2rem 2.4rem;
+        font-size: 1.25rem;
+        margin: 0 auto;
+        width: min(22rem, 100%);
+      }
+    }
   }
-  
-  .home-social-icons a:hover {
-    transform: scale(1.2);
+}
+
+.home-socials-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
   }
-  
-  .home-socials-button-wrapper a {
-    text-decoration: none !important;
-  }
-  
+}
+
+.home-social-icons {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-social-icons a {
+  color: var(--yellow-theme-main-color);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--theme-border-color);
+  background: var(--theme-surface-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-social-icons a:hover {
+  transform: scale(1.12);
+  background: var(--theme-surface-strong-color);
+  border-color: rgba(238, 232, 170, 0.45);
+}
+
+.home-socials-button-wrapper a {
+  text-decoration: none !important;
+}

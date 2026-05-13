@@ -1,64 +1,63 @@
 .skills-info-card {
-    min-height: 23rem;
-    border-radius: 0.65rem;
-    border: 1.5px solid #EEE8AA;
-    backdrop-filter: blur(1rem);
-    
-    // --- CORRECTIF ---
-    position: relative;
-    z-index: 1; // On garde un z-index bas ici
+  min-height: 23rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--theme-border-color);
+  background: var(--theme-surface-color);
+  backdrop-filter: blur(18px);
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--theme-shadow);
 }
 
 .skills-info-card h6 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.8rem 2rem;
-    background: linear-gradient(188deg, #efeccb 0%, #f8ed78 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 1.5px solid #a7a167;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 1.6rem 2rem;
+  background: linear-gradient(188deg, #efeccb 0%, #f8ed78 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1.5px solid rgba(238, 232, 170, 0.38);
 }
 
 .skills-info-content {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .skill-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    &-percentage {
-        color: #625f41;
-        font-weight: bold;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+
+  &-percentage {
+    color: var(--yellow-theme-main-color);
+    font-weight: bold;
+  }
 }
 
 .skill-info p {
-    font-size: 1rem;
-    font-weight: bold;
-    background: linear-gradient(188deg, #efeccb 0%, #f8ed78 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 1.35rem;
+  font-weight: bold;
+  background: linear-gradient(188deg, #efeccb 0%, #f8ed78 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .skill-progress-bg {
-    width: 100%;
-    height: 0.5rem;
-    background: #615d2d;
-    border-radius: 0.5rem;
-    margin: 1rem 0;
-    overflow: hidden;
+  width: 100%;
+  height: 0.6rem;
+  background: rgba(238, 232, 170, 0.16);
+  border-radius: 0.5rem;
+  margin: 1rem 0 1.4rem;
+  overflow: hidden;
 }
 
 .skill-progress {
-    width: 0%; // État de départ
-    height: 0.5rem;
-    background: linear-gradient(90deg, #f3f0d0 -50%, #f4e96e 50%);
-    border-radius: 0.5rem;
-    
-    // --- L'ANIMATION EST ICI ---
-    transition: width 1.5s ease-in-out; 
+  width: 0%;
+  height: 0.6rem;
+  background: linear-gradient(90deg, #f3f0d0 -50%, #f4e96e 50%, #8ddbd6 140%);
+  border-radius: 0.5rem;
+  transition: width 1.5s ease-in-out;
 }

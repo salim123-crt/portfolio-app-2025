@@ -1,66 +1,77 @@
 .skill-card {
-    border-radius: 0.65rem;
-    border: 1.5px solid #EEE8AA;
-    padding: 2.5rem; // Taille Desktop
-    text-align: center;
-    background: rgba(31, 30, 30, 0);
-    backdrop-filter: blur(1rem);
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #EEE8AA;
+  min-height: 11rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--theme-border-color);
+  padding: 2.6rem;
+  text-align: center;
+  background: var(--theme-surface-color);
+  backdrop-filter: blur(18px);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--yellow-theme-main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    // --- VERSION PORTABLE COMPACTE ---
-    @media only screen and (max-width: 768px) {
-        padding: 1.5rem 0.8rem 0.8rem 0.8rem; // Réduction forte du padding
-        margin-top: 0.5rem;
+  &.active {
+    background: linear-gradient(135deg, #f6f4e1 0%, #e0d772 100%);
+    color: #111214;
+    box-shadow: 0 18px 40px rgba(238, 232, 170, 0.14);
 
-        span {
-            font-size: 1rem !important; // Texte plus petit pour réduire le carré
-            display: block;
-            line-height: 1.2;
-        }
+    .skill-icon {
+      background: #ffffff;
+      color: #111214;
     }
+  }
 
-    &.active {
-        background: linear-gradient(100deg, #f6f4e1 0%, #e0d772 100%);
-        color: black;
-        .skill-icon {
-            background: #ffffff;
-            color: black;
-        }
-    }
+  &:hover {
+    transform: translateY(-0.4rem);
+    border-color: rgba(238, 232, 170, 0.5);
+    background: var(--theme-surface-strong-color);
+  }
 }
 
 .skill-icon {
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.65rem;
-    position: absolute;
-    top: -1rem;
-    left: -1rem; // Place d'origine
-    background: #fff59f;
-    border: 1.5px solid #fff8a7;
-    color: #514e2b;
-    transition: all 0.3s ease;
-
-    // --- ICÔNE MOBILE (Petit format, même place) ---
-    @media only screen and (max-width: 768px) {
-        width: 2.2rem; 
-        height: 2.2rem;
-        top: -0.7rem;
-        left: -0.5rem; // On garde le décalage à gauche mais un peu moins extrême
-        
-        svg {
-            font-size: 1.2rem;
-        }
-    }
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  background: #fff59f;
+  border: 1.5px solid #fff8a7;
+  color: #514e2b;
+  transition: all 0.3s ease;
 }
 
 .skill-card span {
-    font-size: 2rem;
-    font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+@media only screen and (max-width: 768px) {
+  .skill-card {
+    padding: 2.4rem 1.4rem 1.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .skill-card span {
+    font-size: 1.35rem;
+  }
+
+  .skill-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    top: -0.7rem;
+    left: -0.5rem;
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
 }

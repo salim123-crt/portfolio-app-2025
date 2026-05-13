@@ -1,6 +1,7 @@
-.App{
-    height: 100%;
-    &-main-page-content{
-        height: calc(100% - 80px);
-    }
+.App {
+  min-height: 100vh;
+
+  &-main-page-content {
+    min-height: calc(100vh - 80px);
+  }
 }

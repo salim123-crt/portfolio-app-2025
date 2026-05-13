@@ -15,7 +15,7 @@ const Skills = () => {
   const fadeInSlightly = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.5, ease: "easeOut" },
   };
 
   return (
@@ -30,7 +30,7 @@ const Skills = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Compétences Techniques
+          Technical Skills
         </motion.h5>
 
         <div className="skills-content">
@@ -40,7 +40,7 @@ const Skills = () => {
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }} // Petit effet de cascade simple
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <SkillCard
                   icon={item.icon}
@@ -53,9 +53,9 @@ const Skills = () => {
           </div>
 
           <motion.div
-            key={selectedSkill.title} 
+            key={selectedSkill.title}
             className="skills-info"
-            initial={{ opacity: 0, y: 5 }} // Mouvement très réduit
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >

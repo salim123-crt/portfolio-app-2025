@@ -1,69 +1,68 @@
+.skills-title {
+  padding-top: 5rem;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  text-align: center;
+  color: var(--yellow-theme-main-color);
+  margin-bottom: 3rem;
+}
+
 .skills-container {
-    margin: 4rem;
-    position: relative;
-  }
-  
-  .skills-container h5 {
-    font-size: 5rem;
-    font-weight: 600;
-    margin-bottom: 3.5rem;
-    color: #EEE8AA;
-  }
-  
-  .skills-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-  
-  .skillss {
-    flex: 1;
-    display: grid;
-    grid-gap: 3rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .skills-info {
-    flex: 1;
-  }
-  
+  max-width: 118rem;
+  margin: 0 auto;
+  padding: 0 8vw 7rem;
+  position: relative;
+}
+
+.skills-container h5 {
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--yellow-theme-main-color);
+}
+
+.skills-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.skillss {
+  flex: 1;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skills-info {
+  flex: 1;
+}
+
+@media only screen and (max-width: 768px) {
   .skills-title {
-    margin-top: 40px;
-    font-size: 4rem;
-    text-align: center;
-    color: var(--yellow-theme-main-color);
-    margin-bottom: 3rem;
+    padding-top: 4rem;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .skills-container {
-      margin: 2rem;
-    }
-  
-    .skills-container h5 {
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-    }
-  
-    .skills-content {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-  
-    .skillss {
-      flex: 1;
-      display: grid;
-      grid-gap: 2rem;
-      grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-  
-    .skills-info {
-      flex: 1;
-    }
-  
-    .skills-title {
-      font-size: 3rem;
-    }
+
+  .skills-container {
+    padding: 0 2rem 5rem;
   }
-  
+
+  .skills-container h5 {
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .skills-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .skillss {
+    grid-gap: 1.6rem;
+    grid-template-columns: 1fr;
+  }
+
+  .skills-info {
+    width: 100%;
+  }
+}

@@ -1,17 +1,11 @@
 .about {
-  padding: 2rem 0;
+  padding: 5rem 8vw 7rem;
 
   .about-title {
-    margin-top: 40px;
-    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4.8rem);
     text-align: center;
     color: var(--yellow-theme-main-color);
     margin-bottom: 3rem;
-
-    @media (max-width: 768px) {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
   }
 }
 
@@ -20,78 +14,62 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 3rem;
-  padding: 0 2rem;
+  max-width: 118rem;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    padding: 1rem;
     gap: 2rem;
   }
 }
 
-// --- COLONNE GAUCHE (Bio & Infos) ---
 .about-left-column {
-  flex: 1.2; // Un peu plus large que la droite
+  flex: 1.2;
+  padding: 3rem;
+  border: 1px solid var(--theme-border-color);
+  border-radius: 0.8rem;
+  background: var(--theme-surface-color);
+  box-shadow: var(--theme-shadow);
 
   .about-titles {
     color: var(--yellow-theme-main-color);
 
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      margin-top: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 1.4rem;
 
       @media (max-width: 768px) {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
       }
     }
 
     .about-text {
-      font-size: 1.4rem;
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-      line-height: 1.6;
+      font-size: 1.65rem;
+      color: var(--yellow-theme-sub-text-color);
+      line-height: 1.85;
 
       @media (max-width: 768px) {
-        font-size: 1.1rem;
-      }
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 1rem;
-
-      li {
-        margin-top: 10px;
         font-size: 1.4rem;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-
-        strong {
-          color: var(--yellow-theme-main-color);
-          margin-right: 5px;
-        }
-
-        @media (max-width: 768px) {
-          font-size: 1.1rem;
-        }
       }
     }
   }
 }
 
-// --- COLONNE DROITE (Projets & Progress Bar) ---
 .about-right-column {
   flex: 1;
   color: var(--yellow-theme-main-color);
+  padding: 3rem;
+  border: 1px solid var(--theme-border-color);
+  border-radius: 0.8rem;
+  background: var(--theme-surface-color);
+  box-shadow: var(--theme-shadow);
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 2rem;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
     }
   }
 
@@ -104,13 +82,13 @@
       .project-info {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10px;
-        color: white;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.2rem;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        color: var(--yellow-theme-sub-text-color);
+        font-size: 1.45rem;
 
         @media (max-width: 768px) {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
       }
 
@@ -120,15 +98,26 @@
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         overflow: hidden;
-        border: 1px solid rgba(238, 232, 170, 0.2); // Légère bordure dorée
+        border: 1px solid rgba(238, 232, 170, 0.2);
 
         .progress-bar-fill {
           height: 100%;
-          background: var(--yellow-theme-main-color);
-          box-shadow: 0 0 15px var(--yellow-theme-main-color);
+          background: linear-gradient(90deg, var(--yellow-theme-main-color), var(--theme-accent-color));
+          box-shadow: 0 0 18px rgba(238, 232, 170, 0.35);
           border-radius: 10px;
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 2rem 5rem;
+  }
+
+  .about-left-column,
+  .about-right-column {
+    padding: 2.2rem;
   }
 }

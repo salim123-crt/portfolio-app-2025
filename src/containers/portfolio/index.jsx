@@ -4,24 +4,24 @@ import "./style.scss";
 
 const projects = [
   {
-    title: "Brain Tumor Detection (Classification)",
+    title: "Brain Tumor Detection",
     link: "https://github.com/salim123-crt/brain-tumor-detection",
-    description: "Modèle de classification pour détecter la présence de tumeurs cérébrales à partir d'images médicales.",
+    description: "Classification model that detects brain tumors from medical images with a clear training and evaluation workflow.",
   },
   {
-    title: "Brain Tumor Segmentation (U-Net)",
+    title: "Brain Tumor Segmentation",
     link: "https://github.com/salim123-crt/Brain-tumor-segmentation",
-    description: "Modèle U-Net pour la segmentation des tumeurs cérébrales. Visualisation couche par couche.",
+    description: "U-Net based segmentation project for brain tumor masks, including visual interpretation of model layers.",
   },
   {
     title: "House Price Prediction",
     link: "https://github.com/salim123-crt/house-price-predictions",
-    description: "Modèle de régression pour prédire les prix des maisons selon plusieurs caractéristiques.",
+    description: "Regression project for estimating house prices from structured real estate features.",
   },
   {
     title: "My Portfolio",
     link: "https://github.com/salim123-crt/portfolio-app-2025",
-    description: "Portfolio personnel dévloppé avec HTML, CSS, JavaScript et React pour présenter mes projets web de manière moderne et reponsive",
+    description: "Personal portfolio built with React to present AI, data, and web projects in a polished responsive interface.",
   },
 ];
 
@@ -41,11 +41,11 @@ const Portfolio = () => {
         <div className="portfolio-projects">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
               className="project-card"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.3 }}
+              transition={{ delay: index * 0.2 }}
             >
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -55,7 +55,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="project-button"
               >
-                Voir sur GitHub
+                View on GitHub
               </a>
             </motion.div>
           ))}
