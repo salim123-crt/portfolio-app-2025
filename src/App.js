@@ -6,6 +6,7 @@ import Skills from './containers/skills'
 import Contact from './containers/contact'
 import Portfolio from './containers/portfolio'
 import NavBar from './components/navBar';
+import ChatBot from './components/chatBot';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       </Routes>
       </div>
 
+      <ChatBot />
     </div>
   );
 }
