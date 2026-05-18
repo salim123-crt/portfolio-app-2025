@@ -111,6 +111,113 @@
   }
 }
 
+// ── Stats row ──────────────────────────────────────────────
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  max-width: 118rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 8vw;
+}
+
+.about-stat-card {
+  flex: 1;
+  min-width: 14rem;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1.5rem;
+  background: var(--theme-surface-color);
+  border: 1px solid var(--theme-border-color);
+  border-radius: 1.2rem;
+  cursor: default;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: rgba(238, 232, 170, 0.4);
+    box-shadow: 0 8px 28px rgba(238, 232, 170, 0.08);
+  }
+}
+
+.about-stat-value {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--yellow-theme-main-color);
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-size: 1.25rem;
+  color: var(--theme-muted-text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+// ── Tech tags ──────────────────────────────────────────────
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.about-tag {
+  background: rgba(141, 219, 214, 0.1);
+  border: 1px solid rgba(141, 219, 214, 0.28);
+  color: var(--theme-accent-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+// ── Education block ────────────────────────────────────────
+.about-education {
+  margin-top: 3rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--theme-border-color);
+
+  h3 {
+    font-size: 1.8rem;
+    color: var(--yellow-theme-main-color);
+    margin-bottom: 1.4rem;
+  }
+}
+
+.about-edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.about-edu-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--yellow-theme-main-color);
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 8px rgba(238, 232, 170, 0.5);
+}
+
+.about-edu-degree {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--yellow-theme-sub-text-color);
+}
+
+.about-edu-school {
+  font-size: 1.25rem;
+  color: var(--theme-muted-text-color);
+  margin-top: 0.3rem;
+}
+
 @media (max-width: 768px) {
   .about {
     padding: 4rem 2rem 5rem;
@@ -120,4 +227,16 @@
   .about-right-column {
     padding: 2.2rem;
   }
+
+  .about-stats {
+    padding: 0 2rem;
+    gap: 1.2rem;
+  }
+
+  .about-stat-card {
+    min-width: 12rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .about-stat-value { font-size: 2.6rem; }
 }
